@@ -47,6 +47,19 @@ help() {
     printf "  check           Verifica sistema\n"
 }
 
+
+
+mostrar_erro()
+{
+    case "$1" in
+        127) echo "Command not found" ;;
+        126) echo "Permission denied: cannot execute file" ;;
+        130) echo "Command interrupted by user (Ctrl+C)" ;;
+        139) echo "Segmentation fault" ;;
+        *) echo "Unknown error (exit code: $1)" ;;
+    esac
+}
+
 reset="\033[0m"
 red="\033[1;31m"
 green="\033[1;32m"
