@@ -36,6 +36,15 @@ else
 error
 eval "$FAILED"
 fi
+
+if [ "$codigo" -ne 0 ]; then
+    acao=$(eval "printf '%s' \"\${ON_$codigo}\"")
+
+    if [ -n "$acao" ]; then
+        eval "$acao"
+    fi
+fi
+
 }
 
 help() {
