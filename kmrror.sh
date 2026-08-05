@@ -3,11 +3,8 @@
 CONFIG="${HOME}/.kr_conf"
 
 
-
-touch ~/.kr_conf
-
-if [ ! -f "$CONFIG" ]; then 
-cat << 'eof' > ~/.kr_conf
+if [ ! -f "$CONFIG" ]; then
+cat << 'eof' > "$CONFIG"
 # kr_conf
 # WARNING: SUCCESS and FAILED contain shell commands
 
@@ -26,7 +23,6 @@ error() {
 printf "${red}[ ERROR ] command failed${reset}\n"
 }
 
-. ~/.kr_conf
 
 
 checar() {
