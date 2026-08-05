@@ -10,13 +10,13 @@ kmrror é uma ferramenta de linha de comando (CLI) open-source ela serve para ch
 ### Linux
 
 ```sh
-git clone https://github.com/arthursantoslouro-ux/kmrror.git && cd kmrror && sudo install -m 755 kmrror.sh /usr/local/bin/kmrror
+git clone https://github.com/arthursantoslouro-ux/kmrror-src.git && cd kmrror && sudo install -m 755 kmrror.sh /usr/local/bin/kmrror
 ```
 
 ### Termux
 
 ```sh
-git clone https://github.com/arthursantoslouro-ux/kmrror.git && cd kmrror && install -m 755 kmrror.sh "$PREFIX/bin/kmrror"
+git clone https://github.com/arthursantoslouro-ux/kmrror-src.git && cd kmrror && install -m 755 kmrror.sh "$PREFIX/bin/kmrror"
 ```
 
 
