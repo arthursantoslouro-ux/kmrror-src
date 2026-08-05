@@ -6,13 +6,56 @@ CONFIG="${HOME}/.kr_conf"
 if [ ! -f "$CONFIG" ]; then
 cat << 'eof' > "$CONFIG"
 # kr_conf
-# WARNING: SUCCESS and FAILED contain shell commands
+# kmrror configuration file
+#
+# WARNING: SUCCESS, FAILED and ON_* variables contain shell commands.
+# Be careful when editing this file.
 
-# This file is automatically created by kmrror.
-# It is used to customize actions when a command succeeds or fails.
 
-# To configure actions, use the SUCCESS variable for successful commands
-# and the FAILED variable for failed commands.
+# Actions executed when commands succeed or fail.
+#
+# SUCCESS:
+#   Executed when a command finishes successfully (exit code 0).
+#
+# FAILED:
+#   Executed when a command fails and no custom action exists.
+
+
+# Custom actions based on exit codes.
+#
+# The format is:
+#
+# ON_EXIT_CODE='command'
+#
+# Example:
+#
+# ON_127='your command here'
+#
+# Exit codes:
+#
+# 0    Command completed successfully
+# 1    General error
+# 2    Invalid usage
+# 126  Permission denied
+# 127  Command not found
+# 130  Command interrupted by user
+#
+#
+# Available variables:
+#
+# SUCCESS
+#   Action for successful commands.
+#
+# FAILED
+#   Default action for failed commands.
+#
+# ON_CODE
+#   Custom action for a specific exit code.
+#
+# Example:
+#
+# ON_127='custom action' 
+
 eof
 fi 
 
@@ -22,6 +65,7 @@ error() {
 
 printf "${red}[ ERROR ] command failed${reset}\n"
 }
+
 
 
 
