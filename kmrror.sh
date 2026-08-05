@@ -52,10 +52,16 @@ red="\033[1;31m"
 green="\033[1;32m"
 
 
-
-if [ "$1" = "-h" ]; then
-help
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    help
+    exit 0
 fi
+
+if [ "$1" = "-v" ] || [ "$1" = "--version" ]; then
+    printf "kmrror 0.1.0\n"
+    exit 0
+fi
+
 
 checar "$@"
 
