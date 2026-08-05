@@ -14,8 +14,8 @@ git clone https://github.com/arthursantoslouro-ux/kmrror.git && cp kmrror/kmrror
 ```
 ```
 # para Linux
-```
+
 git clone https://github.com/arthursantoslouro-ux/kmrror.git && cp kmrror/kmrror.sh /usr/local/bin/kmrror && chmod +x /usr/local/bin/kmrror
 
-
+```
 
